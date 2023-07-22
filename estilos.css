@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500&family=Tsukimi+Rounded&display=swap');
+
+* { 
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+hr{
+    display: none;
+}
+p{
+    padding: 5px;
+    margin: 5px;
+    border: 1px #565656 solid;
+}
+
+body {
+    background-color: rgb(250, 250, 250);
+}
+
+
+.inputok{
+    border: 1px #565656 solid;
+    color: #565656;
+}
+h1{
+    font-size: 1.5em;
+}
+h2{
+    font-size: 1.3em!important
+}
+.cta{
+    border: 1px #565656 solid;
+    background-color: #d0f6b3;
+}
+.div-titulo {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-titulo h1 {
+    font-weight: 300;
+}
+
+.contenedor {
+    width: 100%;
+    height: calc(100vh - 100px);
+    justify-content: center;
+}
+
+
+.contenedor .div-formulario {
+    width: 50%;
+    padding: 30px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px #565656 solid;
+    color: #565656;
+    
+}
+body{
+    background: rgb(233,252,246);
+    background: radial-gradient(circle, rgba(233,252,246,1) 0%, rgba(208,246,179,1) 100%);
+}
+.tit{
+    position: relative;
+    top: 0px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.contenedor .div-resultado {
+    width: 50%;
+    height: 350px;
+    margin: 15px 15px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px #565656 solid;
+    color: #565656;
+    
+}
+.imgok{
+    width: 100px;
+    margin:10px;
+    align-content: center;
+    display: inline-block;
+    position: relative;
+}
+
+.contenedor .div-formulario h2 {
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 2em;
+    color: #565656;
+}
+
+.contenedor .div-formulario form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .div-formulario form input,
+.contenedor .div-formulario form button {
+    width: 60%;
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+
+.contenedor .div-listado {
+    width: 55%;
+    height: calc(100% - 50px);
+    margin: 15px 15px;
+    background-color: rgb(135, 132, 132);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    
+}
+
+.contenedor .div-listado h2 {
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 2em;
+    color: #565656;
+}
+
+.contenedor .div-listado .div-empleados {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    padding: 0 30px;
+}
+
+.contenedor .div-listado .div-empleados p {
+    margin: 10px 0;
+    font-size: 1em;
+    color: #ddd;
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: none;
+    margin: 0 5px;
+    color: white;
+    border-radius: 50px;
+}
+
+.btn-editar {
+    background-color: #fae992;
+    color: #000;
+}
+
+.btn-eliminar {
+    background-color: red;
+}
+
+
+.footer{
+    font-size: 0.5em;
+    text-align: center;
+    color: #000;
+}

@@ -44,7 +44,7 @@ h2{
 }
 .div-titulo {
     width: 100%;
-    height: 100px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -189,3 +189,28 @@ hr {
     text-align: center;
     color: #000;
 }
+
+@media screen and (max-width: 830px) {
+  .div-titulo {
+    flex-direction: column;
+    -ms-flex-direction: column;
+    align-items: center;
+    padding: 0 0 2rem;
+  }
+
+  .contenedor .div-formulario,
+  .contenedor .div-resultado {
+    width: 90%;
+  }
+
+  .contenedor .div-formulario form input, 
+  .contenedor .div-formulario form button {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 10px 10px;
+  }
+
+  .div-empleados {
+    padding: 1rem;
+  }
+} 

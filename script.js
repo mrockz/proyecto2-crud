@@ -36,14 +36,32 @@ function validarFormulario(e) {
 }
 
 function agregarEmpleado() {
+  listaEmpleados.push({ ...objEmpleado });
 
-    listaEmpleados.push({ ...objEmpleado });
+  // Guardar la lista actualizada de empleados en el localStorage
+  localStorage.setItem('empleados', JSON.stringify(listaEmpleados));
 
-    mostrarEmpleados();
+  mostrarEmpleados();
 
-    formulario.reset();
-    limpiarObjeto();
+  formulario.reset();
+  // limpiarObjeto();
 }
+
+// Función para cargar los empleados desde el localStorage
+function cargarEmpleadosDesdeLocalStorage() {
+  const empleadosGuardados = localStorage.getItem('empleados');
+
+  if (empleadosGuardados) {
+    listaEmpleados = JSON.parse(empleadosGuardados);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Cargar los empleados desde el localStorage al cargar la página
+  cargarEmpleadosDesdeLocalStorage();
+
+  mostrarEmpleados();
+});
 
 function limpiarObjeto() {
     objEmpleado.id = '';
@@ -96,36 +114,35 @@ function cargarEmpleado(empleado) {
 }
 
 function editarEmpleado() {
+  objEmpleado.nombre = nombreInput.value;
+  objEmpleado.puesto = puestoInput.value;
 
-    objEmpleado.nombre = nombreInput.value;
-    objEmpleado.puesto = puestoInput.value;
+  const empleadoEditado = listaEmpleados.find(empleado => empleado.id === objEmpleado.id);
+  if (empleadoEditado) {
+    empleadoEditado.nombre = objEmpleado.nombre;
+    empleadoEditado.puesto = objEmpleado.puesto;
+  }
 
-    listaEmpleados.map(empleado => {
+  // Guardar la lista actualizada de empleados en el localStorage
+  localStorage.setItem('empleados', JSON.stringify(listaEmpleados));
 
-        if (empleado.id === objEmpleado.id) {
-            empleado.id = objEmpleado.id;
-            empleado.nombre = objEmpleado.nombre;
-            empleado.puesto = objEmpleado.puesto;
+  limpiarHTML();
+  mostrarEmpleados();
+  formulario.reset();
 
-        }
+  formulario.querySelector('button[type="submit"]').textContent = 'Agregar';
 
-    });
-
-    limpiarHTML();
-    mostrarEmpleados();
-    formulario.reset();
-
-    formulario.querySelector('button[type="submit"]').textContent = 'Agregar';
-
-    editando = false;
+  editando = false;
 }
 
 function eliminarEmpleado(id) {
+  listaEmpleados = listaEmpleados.filter(empleado => empleado.id !== id);
 
-    listaEmpleados = listaEmpleados.filter(empleado => empleado.id !== id);
+  // Guardar la lista actualizada de empleados en el localStorage
+  localStorage.setItem('empleados', JSON.stringify(listaEmpleados));
 
-    limpiarHTML();
-    mostrarEmpleados();
+  limpiarHTML();
+  mostrarEmpleados();
 }
 
 function limpiarHTML() {
@@ -133,4 +150,5 @@ function limpiarHTML() {
     while (divEmpleados.firstChild) {
         divEmpleados.removeChild(divEmpleados.firstChild);
     }
-}
+
+  }
